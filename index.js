@@ -38,7 +38,7 @@ $(".game-btn").click(function() {
 });
 
 function checkAnswer(currentLevel) {
-
+  var highestLevel = currentLevel;
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
       if (userClickedPattern.length === gamePattern.length){
         setTimeout(function () {
@@ -48,7 +48,7 @@ function checkAnswer(currentLevel) {
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#ingame-heading").text("Game Over, Press Any Key to Restart! Highest Level: " + currentLevel);
+      $("#ingame-heading").text("Game Over, Press Any Key to Restart! Highest Level: " + highestLevel);
 
       setTimeout(function () {
         $("body").removeClass("game-over");
